@@ -1,2 +1,3 @@
-# MSCA-31012-04-Data-Engineering-Platforms
+# Crime on CTA - Data Engineering Platforms Final Project
+
 GitHub repository for final project

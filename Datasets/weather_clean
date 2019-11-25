@@ -1,0 +1,6 @@
+#weather_clean
+
+import pandas
+
+df = pandas.read_csv('weather_01_02.csv')
+print(df)

@@ -30,6 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`BusStops`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`BusStops`;
 CREATE TABLE IF NOT EXISTS `mydb`.`BusStops` (
   `stopID` INT NOT NULL,
   `Long` FLOAT NULL,
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`BusStops` (
   `owlRoutes` VARCHAR(45) NULL,
   `city` VARCHAR(45) NULL,
   `status` VARCHAR(45) NULL,
-  `publicNam` VARCHAR(45) NULL,
+  `publicNam` VARCHAR(60) NULL,
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
   `gridId` INT NULL,
@@ -59,12 +60,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`TrainStops`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`TrainStops`;
 CREATE TABLE IF NOT EXISTS `mydb`.`TrainStops` (
   `stopID` INT NOT NULL,
   `directionID` VARCHAR(45) NULL,
   `stopName` VARCHAR(45) NULL,
   `stationName` VARCHAR(45) NULL,
-  `stationDescriptiveName` VARCHAR(45) NULL,
+  `stationDescriptiveName` VARCHAR(100) NULL,
   `mapID` VARCHAR(45) NULL,
   `ada` VARCHAR(45) NULL,
   `red` VARCHAR(45) NULL,
@@ -121,8 +123,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`crime`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`crime`;
 CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
-  `CrimeID` INT NOT NULL,
+  `crimeID` INT NOT NULL DEFAULT '0',
   `caseNumber` VARCHAR(45) NOT NULL,
   `datetime` DATETIME NULL,
   `block` VARCHAR(45) NULL,

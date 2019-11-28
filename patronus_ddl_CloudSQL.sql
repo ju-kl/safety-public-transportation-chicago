@@ -123,7 +123,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
   `CrimeID` INT NOT NULL,
-  `Case Number` VARCHAR(45) NOT NULL,
+  `caseNumber` VARCHAR(45) NOT NULL,
   `datetime` DATETIME NULL,
   `block` VARCHAR(45) NULL,
   `iucr` VARCHAR(45) NULL,

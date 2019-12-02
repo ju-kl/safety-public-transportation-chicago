@@ -26,5 +26,11 @@ python3 DEPA_FinalProject_DailyCrimeAPI.py
 ## setup/access the cron tab
 crontab -e
 
-## write to crontab to execute script daily at 8:00 am (https://medium.com/@gavinwiener/how-to-schedule-a-python-script-cron-job-dea6cbf69f4e)
-0 8 * * * python3 DEPA_FinalProject_DailyCrimeAPI.py
+## write to crontab to execute script daily at 8:00 am (https://medium.com/@gavinwiener/how-to-schedule-a-python-script-cron-job-dea6cbf69f4e); VM runs on UTC
+0 14 * * * python3 DEPA_FinalProject_DailyCrimeAPI.py
+
+## Display current crontab files
+crontab -l
+
+## Check whether crontab executes
+ps ax | grep cron

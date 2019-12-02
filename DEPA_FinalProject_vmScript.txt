@@ -1,47 +1,30 @@
-### VM script
+### script for running python script on daily API call on the GCP vm ###
 
 
-## pip install required libraries
-pip3 install  numpy pandas sodapy sqlalchemy pymsql jupyter
-pip3 install jupyter nbconvert
+## install pip3
+sudo apt install python3-pip
 
-
-## install jupyter
-wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
-bash Anaconda3-4.0.0-Linux-x86_64.sh
-source ~/.bashrc
-
+## install packages
+pip3 install numpy
+pip3 install pandas
+pip3 install sodapy
+pip3 install sqlalchemy
+pip3 install pymysql
 
 ## get update
 yes | sudo apt-get update
 
+## get .py file from bucket
+gsutil cp gs://crime-api-bucket/DEPA_FinalProject_DailyCrimeAPI.py .
 
-## create folder on vm
-mkdir python
-
-
-## cd into folder
-cd python
-
-
-## copy file from bucket to vm directory
-gsutil cp gs://crime-api-bucket/DEPA_FinalProject_DailyCrimeAPI.ipynb .
-
-
-## create python script (.py) from jupyter notebook file
-jupyter nbconvert --to script DEPA_FinalProject_DailyCrimeAPI.ipynb
-
-
-## read file
+## take a look at the file
 nano DEPA_FinalProject_DailyCrimeAPI.py
 
-
-## execute script continuously
-nohup python DEPA_FinalProject_DailyCrimeAPI.py
-
-
-## execute script once
+## run script ad hoc
 python3 DEPA_FinalProject_DailyCrimeAPI.py
 
+## setup/access the cron tab
+crontab -e
 
-## execute script daily at 8:00 AM
+## write to crontab to execute script daily at 8:00 am (https://medium.com/@gavinwiener/how-to-schedule-a-python-script-cron-job-dea6cbf69f4e)
+0 8 * * * python3 DEPA_FinalProject_DailyCrimeAPI.py

@@ -147,6 +147,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
   `date` DATETIME NULL,
+  `time` VARCHAR(20) NULL,
   `gridId` INT NULL,
   PRIMARY KEY (`CrimeID`),
   INDEX `Grid_ID_idx` (`gridId` ASC),

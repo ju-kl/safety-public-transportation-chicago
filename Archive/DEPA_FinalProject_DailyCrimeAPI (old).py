@@ -196,13 +196,6 @@ crime_new['date'] = crime_new['datetime'].dt.date
 crime_new['date'] = pd.to_datetime(crime_new['date']) 
 
 
-# In[ ]:
-
-
-# Add time column from datetime
-crime_new['time'] = crime_new['datetime'].dt.time
-
-
 # In[117]:
 
 

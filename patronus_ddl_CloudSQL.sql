@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`BusStops`;
 CREATE TABLE IF NOT EXISTS `mydb`.`BusStops` (
-  `stopID` INT NOT NULL,
+  `stopID` VARCHAR(45),
   `Long` FLOAT NULL,
   `systemStop` FLOAT NULL,
   `street` VARCHAR(45) NULL,
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
   `date` DATETIME NULL,
-  `time` VARCHAR(20) NULL,
+  `time` VARCHAR(45),
   `gridId` INT NULL,
   PRIMARY KEY (`CrimeID`),
   INDEX `Grid_ID_idx` (`gridId` ASC),
@@ -169,6 +169,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+SET FOREIGN_KEY_CHECKS=0;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

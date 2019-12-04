@@ -27,6 +27,9 @@ To run the daily execution of the DailyCrimeAPI script, a dedicated Bucket and C
 ### DataAnalysis
 This script includes all analyses performed on the final dataset.
 
+### gridPolygonCreation
+This script creates polygons for each gridId and outputs a .shp for us to visualize the grids in Tableu and perform respective analyses.
+
 ### Dashboard
 This dashboard presents the visualization created based on the final dataset.
 

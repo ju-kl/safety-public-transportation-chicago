@@ -29,7 +29,6 @@ SELECT COUNT(*) FROM TrainStops;
 SELECT * FROM TrainStops
 LIMIT 10;
 
-
 SELECT COUNT(*) FROM grid;
 SELECT * FROM grid
 LIMIT 10;
@@ -42,7 +41,7 @@ SELECT COUNT(*) FROM weather;
 SELECT * FROM weather
 LIMIT 10;
 
-## Checking the datatype of a certain column
+## Check the datatype of a certain column
 SELECT DATA_TYPE 
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE 
@@ -51,6 +50,12 @@ WHERE
 
 ########### Querying the data ##########
 
+# Find the number of crimes ocurring by Location type
+SELECT 
+    locationDescription, COUNT(*)
+FROM
+    crime
+GROUP BY locationDescription;
 
 
 

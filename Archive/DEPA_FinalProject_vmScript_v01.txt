@@ -1,0 +1,47 @@
+### VM script
+
+
+## pip install required libraries
+pip3 install  numpy pandas sodapy sqlalchemy pymsql jupyter
+pip3 install jupyter nbconvert
+
+
+## install jupyter
+wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
+bash Anaconda3-4.0.0-Linux-x86_64.sh
+source ~/.bashrc
+
+
+## get update
+yes | sudo apt-get update
+
+
+## create folder on vm
+mkdir python
+
+
+## cd into folder
+cd python
+
+
+## copy file from bucket to vm directory
+gsutil cp gs://crime-api-bucket/DEPA_FinalProject_DailyCrimeAPI.ipynb .
+
+
+## create python script (.py) from jupyter notebook file
+jupyter nbconvert --to script DEPA_FinalProject_DailyCrimeAPI.ipynb
+
+
+## read file
+nano DEPA_FinalProject_DailyCrimeAPI.py
+
+
+## execute script continuously
+nohup python DEPA_FinalProject_DailyCrimeAPI.py
+
+
+## execute script once
+python3 DEPA_FinalProject_DailyCrimeAPI.py
+
+
+## execute script daily at 8:00 AM

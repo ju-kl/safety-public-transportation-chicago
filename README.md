@@ -28,4 +28,4 @@ To run the daily execution of the DailyCrimeAPI script, a dedicated Bucket and C
 This script includes all analyses performed on the final dataset.
 
 ### Dashboard
-This dashboard presents the visualization created based ont he final dataset.
+This dashboard presents the visualization created based on the final dataset.

@@ -29,3 +29,6 @@ This script includes all analyses performed on the final dataset.
 
 ### Dashboard
 This dashboard presents the visualization created based on the final dataset.
+
+### FinalPresentation
+This presentation summarizes the entire project and its findings.

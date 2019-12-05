@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`BusStops`;
 CREATE TABLE IF NOT EXISTS `mydb`.`BusStops` (
-  `stopID` VARCHAR(45),
+  `stopID` VARCHAR(45) NOT NULL,
   `systemStop` FLOAT NULL,
   `street` VARCHAR(45) NULL,
   `crossSt` VARCHAR(45) NULL,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`BusStops` (
   `publicNam` VARCHAR(60) NULL,
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
-  `gridId` INT NULL,
+  `gridId` INT NOT NULL,
   PRIMARY KEY (`stopID`),
   INDEX `Grid_ID_idx` (`gridId` ASC),
   CONSTRAINT `busgrid`
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`TrainStops` (
   `o` BOOL NULL,
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
-  `gridId` INT NULL,
+  `gridId` INT NOT NULL,
   PRIMARY KEY (`stopID`),
   INDEX `Grid_ID_idx` (`gridId` ASC),
   CONSTRAINT `traingrid`
@@ -145,10 +145,10 @@ CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
   `updatedOn` DATETIME NULL,
   `latitude` FLOAT NULL,
   `longitude` FLOAT NULL,
-  `date` DATETIME NULL,
+  `Date` DATETIME NULL,
   `time` VARCHAR(45),
-  `gridId` INT NULL,
-  PRIMARY KEY (`CrimeID`),
+  `gridId` INT NOT NULL,
+  PRIMARY KEY (`crimeID`),
   INDEX `Grid_ID_idx` (`gridId` ASC),
   INDEX `date_idx` (`date` ASC),
   CONSTRAINT `crimegrid`
@@ -157,12 +157,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`crime` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `holidate`
-    FOREIGN KEY (`date`)
+    FOREIGN KEY (`Date`)
     REFERENCES `mydb`.`hday` (`Date`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `weatherdate`
-    FOREIGN KEY (`date`)
+    FOREIGN KEY (`Date`)
     REFERENCES `mydb`.`weather` (`Date`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

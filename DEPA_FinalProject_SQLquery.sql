@@ -61,7 +61,8 @@ WHERE TABLE_NAME = 'TrainStops';
 # Find the number of crimes ocurring by Location type
 SELECT locationDescription, COUNT(*) AS numberOfCrimes
 FROM crime
-GROUP BY locationDescription;
+GROUP BY locationDescription
+ORDER BY COUNT(*) DESC;
 
 # Find the total number of crimes occuring per year
 SELECT year, COUNT(*) AS numberOfCrimes
@@ -85,26 +86,28 @@ SELECT Holiday, DATE(Date) as Date, COUNT(*) as numberOfCrimes
 FROM hday
 INNER JOIN crime USING (Date)
 WHERE YEAR(Date) = 2019
-GROUP BY Holiday , Date
+GROUP BY Holiday, Date
 ORDER BY COUNT(*) DESC
 LIMIT 5;
 # Most number of crimes occured on Memorial day, which was 20
 
-
-
-
-
-
-# Note there are 6912 days between Jan 1 2001 to 05 Dec 2019
-SELECT *
-from crime
-order by date ASC
-limit 5;
-
-
-
+# Bus stops with the most crime occurences
+SELECT routesStpg AS route, publicNam AS stopName, COUNT(*) AS numberOfCrimes
+FROM BusStops
+INNER JOIN crime USING (gridId)
+WHERE locationDescription = "CTA BUS STOP"
+GROUP BY stopID
+ORDER BY COUNT(*) DESC
+LIMIT 5;
 
 # Grids with the most bus stops
+SELECT gridId, COUNT(*) AS numOfBusStops
+FROM grid
+INNER JOIN BusStops USING (gridId)
+GROUP BY gridId
+ORDER BY COUNT(*) DESC
+LIMIT 5;
+
 
 
 

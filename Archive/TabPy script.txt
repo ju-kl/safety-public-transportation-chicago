@@ -1,0 +1,13 @@
+SCRIPT_REAL("
+
+
+import pandas as pd
+import numpy as np
+
+
+_arg1.value_counts()
+# crimebus = pd.merge(crime,BusStops,on = 'gridId',how = 'inner')
+# crimebus['stopID'].value_counts()
+
+
+", ATTR([Stop ID]))

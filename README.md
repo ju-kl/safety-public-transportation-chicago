@@ -1,7 +1,8 @@
 # Safety on Public Transportation in Chicago
 
-### Authors: Jainam Mehta, Julian Kleindiek, Lola Johnston, Peter Eusebio
-### Date: 12/06/2019
+**Authors:** Jainam Mehta, Julian Kleindiek, Lola Johnston, Peter Eusebio
+
+**Date:** 12/06/2019
 
 GitHub repository for our final project of the 'Data Engineering Platforms for Analytics' course at the University of Chicago.
 https://github.com/ju-kl/safety_public_transportation_chicago

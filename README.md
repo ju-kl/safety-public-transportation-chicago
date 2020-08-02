@@ -5,7 +5,7 @@
 **Date:** 12/06/2019
 
 GitHub repository for our final project of the 'Data Engineering Platforms for Analytics' course at the University of Chicago.
-https://github.com/ju-kl/safety_public_transportation_chicago
+https://github.com/ju-kl/safety-public-transportation-chicago
 
 Crime on public transportation and in its surroundings is severe in Chicago, posing a threat to consumers and a challenge to law enforcement authorities. Many UChicago students frequently use public transportation and hence are affected by this issue. The objective of this project is to discover patterns in the occurrence of crime on and around public transportation. The insights derived from this analysis should be used to give consumers guidance on the risk related to the route that they are anticipating to take.
 
